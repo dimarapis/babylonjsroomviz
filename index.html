@@ -1,16 +1,27 @@
-<html>
-    <head>
-        <title>BabylonJS</title>
-        <!-- import style -->
-        <link rel="stylesheet" href="./index.css">
-        <script src="https://cdn.babylonjs.com/babylon.js"></script>
-        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-
-    </head>
-    <body>
-        <canvas  id="main"></div>
-        <!-- import script -->
-        <!-- dont for get to add the type="module" to the script tag -->
-        <script type="module" src="./index.js"></script>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Room with Babylon.js</title>
+    <style>
+        html, body { 
+            width: 100%; 
+            height: 100%; 
+            margin: 0; 
+            overflow: hidden;
+        }
+        #renderCanvas { 
+            width: 100%; 
+            height: 100%; 
+            touch-action: none; 
+        }
+    </style>
+</head>
+<body>
+    <canvas id="renderCanvas"></canvas> <!-- This is where the 3D scene will be rendered -->
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script type="module" src="./index.js"></script>
+</body>
 </html>

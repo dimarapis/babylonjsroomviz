@@ -1,3 +1,7 @@
+import "@babylonjs/loaders/OBJ/objFileLoader";
+import "babylonjs-loaders";
+
+
 window.addEventListener('DOMContentLoaded', function () {
     // Get the canvas element
     var canvas = document.getElementById('renderCanvas');

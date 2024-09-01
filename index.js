@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', function () {
         scene.clearColor = new BABYLON.Color3(0.1, 0.1, 0.1); // Set background color
 
         // Create and position a free camera (non-mesh)
-        var camera = new BABYLON.ArcRotateCamera("camera1", -0.8, 1.2, 20, new BABYLON.Vector3(0, 0, 0), scene);
+        var camera = new BABYLON.ArcRotateCamera("camera1", -0.8, 1.2, 30, new BABYLON.Vector3(0, 0, 0), scene);
         camera.wheelPrecision = 100;
         camera.inertia = 0.97;
         camera.attachControl(canvas, true); // Attach the camera to the canvas
@@ -17,14 +17,14 @@ window.addEventListener('DOMContentLoaded', function () {
         var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
         light.intensity = 0.7;
 
-        // Load the OBJ and MTL files
-        await BABYLON.SceneLoader.ImportMeshAsync("", "assets/", "model.obj", scene);
+        // Load the PLY file
+        await BABYLON.SceneLoader.ImportMeshAsync("", "assets/", "model.ply", scene);
 
         // Optional: Apply some constraints to the camera movement
         scene.onBeforeRenderObservable.add(() => {
             camera.beta = Math.min(camera.beta, 1.45);
             camera.radius = Math.max(camera.radius, 3.);
-            camera.radius = Math.min(camera.radius, 20.); // Adjust as necessary for your scene
+            camera.radius = Math.min(camera.radius, 40.); // Adjust as necessary for your scene
         });
 
         return scene;
